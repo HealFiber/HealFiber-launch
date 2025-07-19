@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealFiber™ Official Investment Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-6xl mx-auto p-6">
+    <header class="text-center mb-10">
+      <h1 class="text-5xl font-bold text-green-700">HealFiber™</h1>
+      <p class="text-xl text-gray-600 mt-2">Biodegradable, Antimicrobial, Life-Saving Bandage Solutions</p>
+      <img src="https://raw.githubusercontent.com/HealFiberOfficial/assets/main/hero-bandages.jpg" alt="HealFiber Bandages" class="mx-auto rounded-xl shadow-xl mt-6 max-h-96 object-cover" />
+    </header>
+    <section class="bg-white rounded-2xl shadow-xl p-6 mb-10">
+      <h2 class="text-3xl font-semibold mb-4">Invest in Healing the Future</h2>
+      <p class="mb-4">Choose your investment amount, enter your funding source, and take part in a mission to save lives with sustainable, scientifically validated healthcare innovations.</p>
+      <label class="block font-medium">Investment Amount ($)</label>
+      <input id="investmentRange" type="range" min="100" max="100000" step="100" value="1000" class="w-full" oninput="document.getElementById('amountDisplay').textContent = '$' + this.value" />
+      <p class="text-lg font-bold mt-1" id="amountDisplay">$1000</p>
+      <label class="block mt-4 font-medium">Your Account ID</label>
+      <input type="text" id="userAccount" class="border rounded px-3 py-2 w-full" placeholder="Investor ID" />
+      <label class="block mt-4 font-medium">Funding Source</label>
+      <input type="text" id="fundSource" class="border rounded px-3 py-2 w-full" placeholder="PayPal, Stripe, Bank Transfer, etc." />
+      <label class="block mt-4 font-medium">Currency</label>
+      <input type="text" id="currency" class="border rounded px-3 py-2 w-full" placeholder="USD, EUR, GBP, etc." />
+      <label class="block mt-4 font-medium">Cryptocurrency</label>
+      <input type="text" id="cryptoAsset" class="border rounded px-3 py-2 w-full" placeholder="BTC, ETH, etc." />
+      <label class="block mt-4 font-medium">Land or Asset Title</label>
+      <input type="text" id="landAsset" class="border rounded px-3 py-2 w-full" placeholder="Property Title / Tangible Asset Ref." />
+      <button onclick="confirmInvestment()" class="mt-6 w-full bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-800">Confirm Investment</button>
+      <div id="summary" class="mt-6 hidden border-t pt-4">
+        <h3 class="text-xl font-semibold mb-2">Investment Summary</h3>
+        <p><strong>Amount:</strong> <span id="summaryAmount"></span></p>
+        <p><strong>Investor ID:</strong> <span id="summaryUser"></span></p>
+        <p><strong>Source:</strong> <span id="summarySource"></span></p>
+        <p><strong>Currency:</strong> <span id="summaryCurrency"></span></p>
+        <p><strong>Crypto:</strong> <span id="summaryCrypto"></span></p>
+        <p><strong>Asset:</strong> <span id="summaryAsset"></span></p>
+      </div>
+    </section>
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <img src="https://raw.githubusercontent.com/HealFiberOfficial/assets/main/rapidcloth-packaging.jpg" alt="RapidCloth Packaging" class="rounded-lg mb-2" />
+        <h3 class="text-xl font-semibold">RapidCloth™</h3>
+        <p class="text-sm text-gray-600">Antibacterial clotting wraps with bamboo & aloe — perforated & vacuum-sealed.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <img src="https://raw.githubusercontent.com/HealFiberOfficial/assets/main/recoverywrap.jpg" alt="RecoveryWrap" class="rounded-lg mb-2" />
+        <h3 class="text-xl font-semibold">RecoveryWrap™</h3>
+        <p class="text-sm text-gray-600">Large format trauma wraps with pressure adhesion for emergency stabilization.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <img src="https://raw.githubusercontent.com/HealFiberOfficial/assets/main/dailycare.jpg" alt="DailyCare" class="rounded-lg mb-2" />
+        <h3 class="text-xl font-semibold">DailyCare™</h3>
+        <p class="text-sm text-gray-600">Eco-friendly day-use wound patches made from renewable natural fibers.</p>
+      </div>
+    </section>
+    <section class="text-center">
+      <h2 class="text-2xl font-bold text-green-700">Together, we Heal the World</h2>
+      <p class="mt-2 text-gray-600">Join our mission to bring ethically-made, biodegradable medical supplies to the frontlines of emergencies and underserved communities worldwide.</p>
+    </section>
+  </div>
+  <script>
+    function confirmInvestment() {
+      document.getElementById('summaryAmount').textContent = '$' + document.getElementById('investmentRange').value;
+      document.getElementById('summaryUser').textContent = document.getElementById('userAccount').value;
+      document.getElementById('summarySource').textContent = document.getElementById('fundSource').value;
+      document.getElementById('summaryCurrency').textContent = document.getElementById('currency').value;
+      document.getElementById('summaryCrypto').textContent = document.getElementById('cryptoAsset').value;
+      document.getElementById('summaryAsset').textContent = document.getElementById('landAsset').value;
+      document.getElementById('summary').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
